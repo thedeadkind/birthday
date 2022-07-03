@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+html{
+	overflow-x: hidden;
+	height: 200vh;
+	scroll-behavior: smooth;
+}
+
+body{
+	background: #ced4da;
+}
+
+.display{
+	font-family: Henny Penny;
+	font-weight: 400;
+	font-size: 6rem;
+	position: absolute;
+	left: 22%;
+}
+
+
+a{
+	font-family: Poppins;
+	font-size: 40px;
+	text-decoration: none;
+	font-weight: 400;
+	z-index: 0;
+	position: absolute;
+	color: black;
+	top: 60%;
+	left: 42%;
+}
+
+a:before{
+	content: '';
+	inset: 0;
+	background: #D55650;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s ease-in-out;
+	z-index: -1;
+}
+
+a:hover:before{
+	transform: scaleX(1);
+	transform-origin: left;
+	background: #000000;
+}
+
+a:hover{
+	color: #ffffff;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  top: 700px;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border-radius: 70px;
+  padding: 20px;
+  background-image: linear-gradient(45deg, #4E5252, transparent);
+  cursor: pointer;
+  transition: .5s;
+}
+/* All :hover can be replace by .active class set with JS */
+.card:hover {
+  flex: 13;
+  background: rgba(0, 0, 0, .9);
+}
+
+.card > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  mix-blend-mode: overlay;
+  border-radius: 70px;
+}
+
+.card .infos {
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  opacity: 0;
+  transition: .5s;
+  z-index: 1;
+}
+.card:hover .infos {
+  opacity: 1;
+}
+
+.card .infos .title {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 50px;
+  font-family: Poppins;
+}
+
+.card .infos .sub {
+  opacity: 0.7;
+  position: absolute;
+  top: 150px;
+  font-family: Poppins;
+}
+
+.card .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  font-size: 40px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+span{display: none;}
+@media only screen and (max-width: 600px){
+	html{
+		overflow-y: hidden;
+	}
+
+	body{
+		background: skyblue;
+	}
+
+	.display{
+		display: none;
+	}
+	a{
+		display: none;
+	}
+	.cards{
+		display: none;
+	}
+	span{
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 35%;
+		font-family: Poppins;
+		font-size: 2rem;
+	}
+}
